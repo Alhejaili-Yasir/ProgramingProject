@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 273167019}
   - component: {fileID: 273167018}
   m_Layer: 5
-  m_Name: 'Special Ability  '
+  m_Name: Special Ability  button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 885912289}
   - component: {fileID: 885912288}
   m_Layer: 5
-  m_Name: 'Take Damage '
+  m_Name: Take Damage button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 1623842834}
   - component: {fileID: 1623842833}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: Attack button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,7 +1492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847440983}
-  - component: {fileID: 1847440982}
+  - component: {fileID: 1847440984}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1500,7 +1500,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1847440982
+--- !u!4 &1847440983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847440981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 550.5, y: 253, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847440984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1517,21 +1532,6 @@ MonoBehaviour:
   specialAbilityButton: {fileID: 273167018}
   takeDamageButton: {fileID: 885912288}
   switchCharacterButton: {fileID: 1995098860}
---- !u!4 &1847440983
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847440981}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 550.5, y: 253, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930555094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,7 +1624,7 @@ GameObject:
   - component: {fileID: 1995098861}
   - component: {fileID: 1995098860}
   m_Layer: 5
-  m_Name: 'Switch Character '
+  m_Name: Switch Character button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

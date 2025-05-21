@@ -1,60 +1,58 @@
 using UnityEngine;
 
-// INHERITANCE: Mage inherits from Character
 public class Mage : Character
 {
     private int _mana;
+    private int _spellPower;
+    private int _wisdom;
 
-    // ENCAPSULATION: Public property with validation
     public int Mana
     {
         get { return _mana; }
-        private set { _mana = Mathf.Max(0, value); }
+        set { _mana = value < 0 ? 0 : value; }
     }
 
-    // Constructor
+    public int SpellPower
+    {
+        get { return _spellPower; }
+        set { _spellPower = value < 0 ? 0 : value; }
+    }
+
+    public int Wisdom
+    {
+        get { return _wisdom; }
+        set { _wisdom = value < 0 ? 0 : value; }
+    }
+
     public Mage(string name) : base(name)
     {
-        Strength = 4;
-        Agility = 6;
-        Intelligence = 16;
-        Mana = 100;
-        Health = GetMaxHealth(); // Set starting health
+        _mana = 100;
+        _spellPower = 12;
+        _wisdom = 10;
     }
 
-    // POLYMORPHISM: Override the base Attack method
     public override void Attack()
     {
-        int damage = Intelligence * 2;
-        Debug.Log($"{Name} casts a magic bolt and deals {damage} damage!");
-        Mana -= 10;
+        int damage = SpellPower * 3;
+        Debug.Log($"{Name} casts a Fire Bolt and deals {damage} magic damage!");
     }
 
-    // ABSTRACTION: Implement Mage's special ability
     public override void SpecialAbility()
     {
-        if (Mana >= 25)
-        {
-            int damage = Intelligence * 4;
-            Debug.Log($"{Name} uses Fireball! It deals {damage} area damage.");
-            Mana -= 25;
-        }
-        else
-        {
-            Debug.Log($"{Name} doesn't have enough mana to cast Fireball.");
-        }
+        Debug.Log($"{Name} uses Fire Ball to damage all nearby enemies!");
+        int specialDamage = SpellPower * 4 + Wisdom;
+        Debug.Log($"Fire Ball deals {specialDamage} damage!");
     }
 
-    // POLYMORPHISM: Override GetMaxHealth for a more fragile class
     public override int GetMaxHealth()
     {
-        return base.GetMaxHealth() - 20; // Less durable than base
+        return base.GetMaxHealth() - 20;
     }
 
-    // Extra method: Regenerate mana over time or by item
-    public void RegenerateMana(int amount)
+    public void ManaRecharge()
     {
-        Mana += amount;
-        Debug.Log($"{Name} regenerates {amount} mana. Current mana: {Mana}");
+        int manaGain = 25;
+        Mana += manaGain;
+        Debug.Log($"{Name} Sits and restore {manaGain} mana.");
     }
 }
